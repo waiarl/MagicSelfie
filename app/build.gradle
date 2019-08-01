@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.mobi.magicselfie"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def date = new Date().format("HHmm", TimeZone.getTimeZone("GMT+08:00"))
+            def apkName = "MagicSelfie" + "_" +
+                    buildType.name +
+                    "_" +
+                    defaultConfig.versionName +
+                    "_" +
+                    defaultConfig.applicationId +
+                    "_" +
+                    date +
+                    '.apk'
+            outputFileName = apkName
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'com.google.android.material:material:1.1.0-alpha09'
+
+
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.6'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
+}
+repositories {
+    jcenter()
+    maven { url 'https://jitpack.io' }
+
+    flatDir {
+        dirs 'libs'
+
+    }
+}

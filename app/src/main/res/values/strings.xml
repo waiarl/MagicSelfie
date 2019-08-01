@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MagicSelfie</string>
+
+    <string name="back_tip">What do you want ?</string>
+    <string name="cancel">Cancel</string>
+    <string name="back">Back</string>
+    <string name="save_failed">Save Failed !</string>
+    <string name="save_success">Save Success !</string>
+    <string name="need_write_permission">Read and write permissions are needed</string>
+    <string name="camera_permission">Camera permission is needed !</string>
+</resources>

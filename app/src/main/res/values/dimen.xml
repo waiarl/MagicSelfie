@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="mole_width">100dp</dimen>
+    <dimen name="mole_height">141.6dp</dimen>
+
+    <dimen name="ad_height">326dp</dimen>
+    <dimen name="ad_banner_height">50dp</dimen>
+</resources>
